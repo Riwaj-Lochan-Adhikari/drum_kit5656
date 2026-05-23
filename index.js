@@ -49,8 +49,20 @@ var biH = this.innerHTML;
 //  bih is buttonInnerHTML
  
   key_c(biH);
+  buttonAnimation(biH);
 });}
 //e is for event
     document.addEventListener("keydown",function(e){
        key_c(e.key);
+       buttonAnimation(event.key);
     });
+// ck stands for current key
+    function buttonAnimation(ck){
+     //ab stands for active button
+      var ab =  document.querySelector("." + ck) //the dot is there so it becomes exact ck is event not a css class after all
+      ab.classList.add('pressed');
+       
+  setTimeout(function(){
+    ab.classList.remove("pressed");
+  }, 1000)
+    }
